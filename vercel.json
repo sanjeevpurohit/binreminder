@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "name": "bin-reminder-app",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/enhanced_postcode_bin_collection_schedule.csv",
+      "headers": {
+        "content-type": "text/csv",
+        "cache-control": "public, max-age=3600"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "GENERATE_SOURCEMAP": "false"
+  },
+  "cleanUrls": true,
+  "trailingSlash": false
+}

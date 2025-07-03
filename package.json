@@ -1,0 +1,48 @@
+{
+  "name": "bin-reminder-app",
+  "version": "1.0.0",
+  "description": "UK Bin Collection Reminder App - Search collection schedules by postcode",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "PORT=3002 react-scripts start",
+    "start:windows": "set PORT=3002 && react-scripts start",
+    "build": "react-scripts build",
+    "build:vercel": "GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "papaparse": "^5.4.1",
+    "date-fns": "^2.30.0"
+  },
+  "devDependencies": {
+    "@types/papaparse": "^5.3.14",
+    "vercel": "^37.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "bin collection",
+    "waste management",
+    "UK councils",
+    "postcode search",
+    "recycling"
+  ],
+  "author": "Bin Reminder Team",
+  "license": "MIT"
+}
